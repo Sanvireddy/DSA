@@ -31,6 +31,7 @@ void bfs(vector<int> adj[], int start, int vertices)
         }
     }
 }
+
 int main()
 {
     int n, m;
@@ -46,5 +47,6 @@ int main()
     }
 
     bfs(adj, 0, n);
+
     return 0;
 }
