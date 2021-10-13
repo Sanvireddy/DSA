@@ -28,9 +28,15 @@ public:
     bool isFull()
     {
         if (rear == (size - 1))
+        {
+            cout << "Queue is full" << endl;
             return true;
+        }
         else
+        {
+            cout << "Queue is not full" << endl;
             return false;
+        }
     }
 
     void enqueue(int key)
@@ -71,16 +77,23 @@ public:
             arr[front] = 0;
             front++;
         }
+        cout << "Element at the front of the queue is: ";
         return x;
     }
 
     void display()
     {
-        for (int i = front; i <= rear; i++)
+        if (isEmpty())
+            cout << "Queue is empty" << endl;
+        else
         {
-            cout << arr[i] << " ";
+            cout << "Elements of the queue are: ";
+            for (int i = front; i <= rear; i++)
+            {
+                cout << arr[i] << " ";
+            }
+            cout << endl;
         }
-        cout << endl;
     }
 
     int getrear()
@@ -104,15 +117,13 @@ int main()
 
     q.enqueue(2);
     q.display();
-    //cout << "1. " << q.getfront() << endl;
-    //cout << "2. " << q.getrear() << endl;
+
     q.enqueue(3);
     q.display();
     q.enqueue(0);
     q.enqueue(9);
     cout << q.isFull() << endl;
-    //cout << "1. " << q.getfront() << endl;
-    //cout << "2. " << q.getrear() << endl;
+
     cout << q.dequeue() << endl;
     cout << "1. " << q.getfront() << endl;
     cout << "2. " << q.getrear() << endl;

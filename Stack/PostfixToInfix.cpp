@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+#include <bits/stdc++.h>
 using namespace std;
 
 string PostfixToInfix(string postfix)
@@ -12,7 +13,6 @@ string PostfixToInfix(string postfix)
             string op(1, postfix[i]);
             //this will make 1 copy of char in postfix[i]
             //it also changes the type from 'char' to 'string'
-
             s.push(op);
         }
         else
@@ -33,8 +33,9 @@ int main()
     cout << "Enter a Postfix expression: " << endl;
     cin >> postfix;
     infix = PostfixToInfix(postfix);
-    cout
-        << "INFIX EXPRESSION: " << infix;
+    cout << "INFIX EXPRESSION: " << infix;
     cout << endl;
+    string s="12";
+    cout<<stoi(s)<<endl;
     return 0;
 }
