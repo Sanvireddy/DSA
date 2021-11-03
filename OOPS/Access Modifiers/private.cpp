@@ -20,6 +20,8 @@ public:
 int main()
 {
     square obj;
+    // private members are inaccessible outside the class
+    // cout << obj.side() << endl;
     cout << obj.area(4.2) << endl;
     return 0;
 }

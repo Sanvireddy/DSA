@@ -7,6 +7,13 @@ class ListNode{
     ListNode* next;
 };
 
+
+class Node : public ListNode  {
+    public:
+    Node* next;
+    int data;
+};
+
 ListNode* insertionSortList(ListNode* A) {
     ListNode* node = A;
     while(node!=NULL)

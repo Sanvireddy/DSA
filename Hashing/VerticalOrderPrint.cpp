@@ -21,7 +21,7 @@ Node* newNode(int key)
     node->key = key;
     node->left = node->right = NULL;
 }
-void getVerticalOrder(Node* root,int hdis,map<int,vector<int>> &m)
+void getVerticalOrder(Node* root,int hdis,map<int,vector<int> > &m)
 {
     if(root==NULL)
     return;
@@ -40,7 +40,7 @@ signed main()
     root->right->left=newNode(14);
     root->right->right=newNode(6);
 
-    map<int,vector<int>> m; 
+    map<int,vector<int> > m; 
     int hdis = 0;
     getVerticalOrder(root,hdis,m);
 
