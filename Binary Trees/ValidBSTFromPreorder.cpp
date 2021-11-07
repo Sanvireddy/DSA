@@ -26,6 +26,9 @@ bool isValidBST(vector<int> v)
     return 1;
 }
 
+// TC: O(n)
+// SC: O(n)
+
 int main()
 {
     vector<int> v;
