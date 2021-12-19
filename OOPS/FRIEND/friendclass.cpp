@@ -1,43 +1,58 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class sum
+class datamem
 {
 private:
     int data1;
     int data2;
 
 public:
-    void getdat1(int dat1)
+    datamem(int x, int y)
     {
-        data1 = dat1;
+        data1 = x;
+        data2 = y;
     }
-    void getdat2(int dat2)
-    {
-        data2 = dat2;
-    }
-    friend class datamem;
+    friend class sum;
 };
 
-class datamem
+class subtract : public datamem
+{
+private:
+    int d1;
+    int d2;
+    
+};
+class sum
 {
 private:
     int totalsum;
 
 public:
-    void totsum(sum &s)
+    void totsum(datamem &s)
     {
         totalsum = s.data1 + s.data2;
         cout << "Total sum is " << totalsum << endl;
     }
+    // s.d1 is inaccessible because friend function of base class
+    // is not friend func of derived class
+
+    /*
+    void totsub(subtract &s)
+    {
+        cout << s.d1 - s.d2 << endl;
+    }
+    */
 };
 
 int main()
 {
-    sum obj1;
-    datamem obj2;
-    obj1.getdat1(5);
-    obj1.getdat2(9);
+    datamem obj1(9, 10); // base class
+    sum obj2;            // friend class of base class
+    subtract obj3();     // derived class of base class
+
+    // friend class can access private mem of base class since it is frnd of base
     obj2.totsum(obj1);
+
     return 0;
 }
